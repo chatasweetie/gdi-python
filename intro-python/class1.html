@@ -89,13 +89,12 @@
         <!-- OPTIONAL: Instructor Intro -->
 				<section>
 					<h2>Your Instructor</h2>
-					<p>Jeseekia Vaughn</p>
+					<p>Jessica Dene Earley-Cha</p>
 					<ul>
-						<li>👩🏽‍💻 Software Engineer</li>
-						<li>👩🏽‍🏫 Instructor</li>
+						<li>👩🏽‍💻 Developer Relations Engineer</li>
+						<li>👩🏼‍🏫 Instructor</li>
 						<li>🫶🏽 SME / Board Member</li>
-						<li>🎥 Content Creator / Community Organizer</li>
-						<li>👶🏽 New Mom</li>
+						<li>👩🏻‍🤝‍👩🏾 Women Techmaker Ambassador</li>
 					</ul>
 				</section>
 
@@ -108,9 +107,9 @@
 
         <!-- OPTIONAL: Student Intros / IceBreaker -->
         <!-- Instructor's choice. -->
-        <!-- <section>
+        <section>
           <h2>Ice Breaker</h2>
-        </section> -->
+        </section>
 
         <!-- BEGINNING OF COURSE SLIDES -->
 				<!-- Create as many new sections as needed -->
@@ -131,10 +130,14 @@
 						<p>What is Python? Why learn it?</p>
 					</div>
 						<div class="fragment">
-						<p>One way to use Python (repl.it)</p>
+						<p>Website that allows you to code -> repl.it)</p>
 					</div>
 						<div class="fragment">
 						<p>Python basics (variables, functions, troubleshooting)</p>
+					</div>
+					<div class="fragment">
+						<p>Resources & Next Steps</p>
+					</div>
 				</section>
 				
 				<!--What is Programming?--->
@@ -175,7 +178,7 @@
 						<p>Popular language (many resources available)</p>
 					</div>
 						<div class="fragment">
-						<p>Good learning language (functional programming, object-oriented)</p>
+						<p>Good learning language that is used in industry</p>
 					</div>		
 				</section>
 				
@@ -211,8 +214,13 @@
 				      <img src="images/pyexample.png" alt="">
 				    </div>
 				    <div class="flex-item">
-				      <p class="left-align">Python is case-sensitive ("Hello" is not the same as "hello" or "HELLO")</p>
-				      <p class="left-align">Indentation is important</p>
+						<p class="left-align">Python is case-sensitive</p>
+						<!-- <p class="left-align">"Hello" is not the same as "hello" or "HELLO"</p> -->
+						<p class="left-align"><pre><code data-trim data-noescape class="python">
+							Hello = "Hello"
+							hello = "hello"
+							HELLO = "HELLO"</code></pre></p>
+						<p class="left-align">Indentation is important</p>
 				    </div>
 				  </div>
 				</section>
@@ -250,17 +258,31 @@
 					<h3>Variables</h3>
 					<pre>
 					<code data-trim data-noescape class="python">
-						#this is a string
-						print(type("Hello World"))
+						#use input() to ask users to provide input and binds it to name
+						name = input("What is your name? ")
 
-						#this is a integer (no decimals)
-						print(type(3))
-
-						#this is a float (decimal places)
-						print(type(3.1))	
+						#prints the value of the variable name
+						print(name)
 					</code>
 					</pre>
         </section>
+
+		<!-- Slides with Code: Data types  -->
+        <section>
+			<h3>Data types</h3>
+			<pre>
+			<code data-trim data-noescape class="python">
+				#this is a string
+				print(type("Hello World"))
+
+				#this is a integer (no decimals)
+				print(type(3))
+
+				#this is a float (decimal places)
+				print(type(3.1))	
+			</code>
+			</pre>
+</section>
 				
         <!-- Slides with Code: Functions  -->
         <section>
@@ -270,10 +292,12 @@
 						#you can create functions to do a specific task
 
 						def add(x, y):
-							answer = x + y
-							print(answer)
+							result = x + y
+							return result
 
-						add(2, 3)
+						answer = add(2, 3)
+
+						print(answer)
 					</code>
 					</pre>
         </section>	
@@ -484,7 +508,8 @@
 					<h2>New GDI Courses</h2>
 					<!-- ADD A LIST OF GDI COURSES -->
           <!-- <h3><a href="">COURSE</a></h3> -->
-					<!-- <h3><a href="">COURSE</a></h3> -->
+					<h3><a href="">COURSE</a></h3>
+					<!-- TODO: add next step classes that GDI offers -->
 					<!-- <h3><a href="">COURSE</a></h3> -->
           <h4><a href="https://girldevelopit.com/events/" target="blank">www.girldevelopit.com/events</a></h4>
 
