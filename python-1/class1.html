@@ -84,18 +84,32 @@
 				</section>
         <!-- DO NOT DELETE ANY OF THE GDI INTRODUCTORY SLIDES ABOVE THIS COMMENT -->
 
-        <!-- Instructor Intro -->
+        <!-- OPTIONAL: Instructor Intro -->
 				<section>
 					<h2>Your Instructor</h2>
-					<p>Name, title, company, bio, etc</p>
+					<p>Jessica Dene Earley-Cha</p>
+					<ul>
+						<li>👩🏽‍💻 Developer Relations Engineer</li>
+						<li>👩🏼‍🏫 Instructor</li>
+						<li>🫶🏽 SME / Board Member</li>
+						<li>👩🏻‍🤝‍👩🏾 Women Techmaker Ambassador</li>
+					</ul>
 				</section>
 
         <!-- OPTIONAL: TAs Intro -->
         <!-- Comment out the slide section if not needed. -->
-        <!-- <section>
-          <h2>Your TAs</h2>
-          <p>Names, titles</p>
-        </section> -->
+        		<section>
+          			<h2>Your TA</h2>
+         			<p>Abigail Simanjuntak</p>
+		  			<ul>
+						<li>Student at UVM</li>
+						<li>Data Science!</li>
+						<li>Teaching Assistant</li>
+						<li>Fashion and Traveling</li>
+		  			</ul>
+        		</section>
+
+        <!-- OPTIONAL: Student Intros / IceBreaker -->
 
         <!-- OPTIONAL: Student Intros / IceBreaker -->
         <!-- Instructor's choice. -->
@@ -237,13 +251,13 @@
                     <h3>Benefits</h3>
 
                     <p>For learning:</p>
-                    <ul>
-                        <li>Easier to read and use than most languages
+                    <ul class="fragment">
+                        <li>Easier to read and use
                         <li>Includes features of many different types of languages
                             <ul><li>Concepts can translate to other languages</li></ul>
                     </ul>
                     <p>For development:</p>
-                    <ul>
+                    <ul class="fragment">
                         <li>Wide range of applications (web, data science, graphics, games, language, etc)
                             thanks to the huge number of libraries and tutorials.
                     </ul>
@@ -304,9 +318,9 @@
                     <p>It is possible to code locally on your computer, using:
                     </p>
                     <ul>
-                        <li><a href="https://sp21.cs61a.org/lab/lab00/#install-python-3" target="_blank">locally installed Python</a>
-                        <li><a href="https://sp21.cs61a.org/lab/lab00/#install-a-terminal" target="_blank">the command line</a>
-                        <li><a href="https://inst.eecs.berkeley.edu/~cs61a/sp21/lab/lab00/#install-a-text-editor" target="_blank">a text editor</a>
+                        <li>Find your command line/terminal: <a href="https://www.howtogeek.com/682770/how-to-open-the-terminal-on-a-mac/" target="_blank">Mac</a> or <a href="https://www.wikihow.com/Open-Terminal-in-Windows" target="_blank">Windows</a>
+                        <li><a href="https://www.python.org/downloads/" target="_blank">Locally installed Python</a>
+                        <li><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code: a text editor</a>
                     </ul>
                 </section>
 
@@ -321,17 +335,21 @@
                     </p>
                 </section>
 
-                <section>
-                    <h3>Repl.it setup</h3>
+                <!-- REPL Walkthrough -->
+				<section>
+					<h2>Repl Walkthrough</h2>
+					<p><a href="https://replit.com/">www.replit.com</a></p>
+				</section>
 
-                    <p>We'll also use Repl.it teams for virtual assignments/help.</p>
-
-                    <ul style="font-size:1.0em;">
-                        <li>Create a Repl.it account
-                        <li>Join the team following the invite link
-                        <li>Add your name to the team REPL!
-                    </ul>
-                </section>
+				<section>
+					<img src="../intro-python/images/replit-workspace.png" alt="Replit Workspace" width="500px" class="noborder"/>
+					<ul>
+						<li>#1 Main Python file, where you write your code</li>
+						<li>#2 The Green arrow "Runs" the main.py file</li>
+						<li>#3 The output is displayed here from main.py file from #2</li>
+						<li>#4 Terminal, where you can run python.py file and output is displayed</li>
+					</ul>
+				</section>
 
 
                 <section class="heading-only">
@@ -352,21 +370,18 @@
                         <tbody>
                             <tr>
                                 <td>Integers
-                                <td><code>2</code> <code>44</code> <code>-3</code>
+                                <td><code>2</code>  |  <code>44</code>  |  <code>-3</code>
                             <tr>
                                 <td>Floats
-                                <td><code>3.14</code> <code>4.5</code> <code>-2.0</code>
+                                <td><code>3.14</code>  |  <code>4.5</code>  |  <code>-2.0</code>
                             <tr>
                                 <td>Booleans
-                                <td><code>True</code> <code>False</code>
+                                <td><code>True</code>  |  <code>False</code>
                             <tr>
                                 <td>Strings
-                                <td><code>'¡hola!'</code> <code>'its python time!'</code>
+                                <td><code>'¡hola!'</code>  |  <code>'its python time!'</code>
                     </table>
 
-                    <p>Try in a Python REPL (console).<br>
-                        <a href="https://replit.com/new/python3" target="_blank">https://replit.com/new/python3</a>
-                        </p>
                 </section>
 
                 <section class="heading-only">
@@ -374,7 +389,7 @@
                 </section>
 
                 <section>
-                    <h3>Expressions <span class="smaller">(with operators)</span></h3>
+                    <h3>Expressions <span class="smaller">with operators</span></h3>
 
                     <p class="smaller">An expression describes a computation and evaluates to a value.</p>
 
@@ -396,13 +411,10 @@
                     2 ** 100
                     </code></pre>
 
-                    <p>Try in a Python REPL (console).<br>
-                    <a href="https://replit.com/new/python3" target="_blank">https://replit.com/new/python3</a>
-                    </p>
                 </section>
 
                 <section>
-                    <h3>Expressions <span class="smaller">(with function calls)</span></h3>
+                    <h3>Expressions <span class="smaller">with function calls</span></h3>
 
                     <p class="smaller">Many expressions use function calls:</p>
 
@@ -734,6 +746,7 @@
                     We'll do the first question together. Then work through the other questions,
                     using Zoom or Repl chat when you have questions.
                     </p>
+                    <p>When your done you can hop off at the end of time.</p>
 
                 </section>
 
