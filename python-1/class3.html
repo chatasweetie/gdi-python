@@ -29,7 +29,7 @@
 			<div class="slides">
 
 				<section class="heading-only" style="padding-top:5%">
-                    <h1>Conditionals</h1>
+                    <h1>Python 101 Class #3</h1>
 
 					<div class="no-print" style="text-align: left; margin-top: 100px; font-size: 70%;">
 						Tips for navigating the slides:
@@ -43,7 +43,7 @@
                     <aside class="speaker-notes">
                     Lesson Plan:
                     12:05 - Review
-                    12:15 - Side effects
+                    12:15 - Return Values
                     12:25 - More on functions
                     12:30 - Boolean expressions
                     12:50 - Exercise
@@ -57,7 +57,7 @@
 
                     <ul>
                         <li>Review
-                        <li>Side effects
+                        <li>Return Values
                         <li>Conditionals
                         <li>Booleans
                     </ul>
@@ -78,25 +78,29 @@
 
                     <p>Typically used for combining string literals (in quotes) with string variables (names):</p>
 
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
                     start = 'If youre happy and you know it, '
                     lyric1 = start + 'clap your hands!'
                     lyric2 = start + 'wiggle your toes!'
                     lyric3 = start + 'hug a friend!'
                     </code></pre>
-                    <div class="fragment">
+                </section>
+
+                <section>
+                    <h3>String concatenation</h3>
+
                     <p class="smaller">Wrap a long expression in parentheses if it goes over multiple lines:</p>
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
                     verse = (lyric1 + '\n' + lyric1 + '\n' +
-                        start + ' and you really want to show it \n' + lyric1)
+                    start + ' and you really want to show it \n' + lyric1)
                     </code></pre>
-                    </div>
 
                 </section>
 
                 <section>
                     <h3>Why functions?</h3>
-
+                    
+                    <div class="fragment">
                     <p>Consider this function-less code:</p>
                     <pre style="font-size:0.6em"><code data-trim data-noescape class="python">
                     greeting1 = "Hello, Jackson, how are you?";
@@ -107,26 +111,27 @@
                     <p>Functions help when code has <strong>repetition</strong>.</p>
 
                     <p>Function parameters help when that repetitive code has <strong>variation</strong>.</p>
+                    </div>
                 </section>
 
                 <section>
                     <h3>Building a function</h3>
 
-                    <p>First identify the repetitive parts:</p>
+                    <p class="fragment">First identify the repetitive parts:</p>
 
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
                     def say_greeting():
                         return "Hello, how are you?"
                     </code></pre>
 
-                    <p>Then use parameters for the parts that vary:</p>
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <p class="fragment">Then use parameters for the parts that vary:</p>
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
                     def say_greeting(name):
                         return "Hello, " + name + ", how are you?"
                     </code></pre>
 
-                    <p>Finally, test it with different arguments:</p>
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <p class="fragment">Finally, test it with different arguments:</p>
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
                     greeting1 = say_greeting("Jackson");
                     greeting2 = say_greeting("Dr. Biden")
                     greeting3 = say_greeting("Stranger")
@@ -135,24 +140,24 @@
 
 
                 <section class="heading-only">
-                    <h2>Side effects</h2>
+                    <h2>Return Values</h2>
                 </section>
 
                 <section>
-                    <h3>The None value</h3>
+                    <h3>Return None</h3>
 
-                    <p>The special value <code>None</code> represents nothingness in Python.</p>
+                    <p><code>None</code> represents nothingness in Python</p>
 
                     <p>Any function that doesn't explicitly return a value will return <code>None</code>:</p>
 
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
                     def square_it(x):
-                      x * x
+                        print(x * x)
                     </code></pre>
 
                     <div class="fragment">
                     <p>When a function returns <code>None</code>, the console shows no output at all:</p>
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
                     square_it(4)
                     </code></pre>
                     </div>
@@ -166,10 +171,16 @@
 
                 </section>
                 <section>
-                    <h3>Side effects</h3>
+                    <h3>Side Effect</h3>
 
                     <p>A <strong>side effect</strong> is when something happens as a result of calling a function
                     besides just returning a value.</p>
+
+                    <pre style="font-size:0.7em">
+                        <code data-trim data-noescape class="python">
+                        def square_it(x):
+                            print(x * x)
+                        </code></pre>
 
                     <p>The most common side effect is logging to the console, via the built-in <code>print()</code> function.</p>
 
@@ -177,42 +188,53 @@
                     print(-2)
                     </code></pre>
 
-                    <p>A similar side effect is writing to a file:</p>
-
-                    <pre style="font-size:0.6em"><code data-trim data-noescape class="python">
-                    f = open('songs.txt', 'w')
-                    f.write("Dancing On My Own, Robyn")
-                    f.close()
-                    </code></pre>
-
                 </section>
 
                 <section>
                     <h3>Side effects vs. Return values</h3>
 
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
                     def square_num1(number):
+                        print(pow(number, 2))
+                    </code></pre>
+
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    def square_num2(number):
                         return pow(number, 2)
                     </code></pre>
 
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
-                    def square_num2(number):
-                        print(number ** 2)
-                    </code></pre>
-
                     <ul>
-                        <li>Which one has a side effect?<br>
-                        <span class="fragment">The second function has a side effect,
+                        <li class="fragment">Which one has a side effect?<br>
+                        <span class="fragment">The first function has a side effect,
                             because it prints to the console.</span>
-                        <br><br>
-                        <li>What data type do they each return?
                         <br>
-                        <span class="fragment">The first function returns a number,
-                        the second one returns <code>None</code>.
+                        <li class="fragment">What data type do they each return?
+                        <br>
+                        <span class="fragment">The second function returns a number,
+                        the first one returns <code>None</code>.
 
 
                     </p>
 
+                </section>
+
+                <section>
+                    <h3>Multiple return values</h3>
+
+                    <p class="fragment">A function can specify multiple return values, separated by commas.</p>
+
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    def divide_exact(n, d):
+                        quotient = n // d
+                        remainder = n % d
+                        return quotient, remainder
+                    </code></pre>
+
+                    <p class="fragment">Any code that calls that function must also "unpack it" using commas:</p>
+
+                    <pre class="fragment" style="font-size:.7em"><code data-trim data-noescape class="python">
+                    q, r = divide_exact(618, 10)
+                    </code></pre>
                 </section>
 
                 <!-- TODO for CS61A: Pure functions, Nested print, Multiple environments, Miscellaneous Python features -->
@@ -224,45 +246,27 @@
                 <section>
                     <h3>Default arguments</h3>
 
-                    <p>In the function signature, a parameter can specify a <strong>default value</strong>.
-                        If that argument isn't passed in, the default value is used instead.</p>
+                    <p class="fragment">Can have a default value for an arguement ins't passed in.</p>
 
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
-                    def calculate_dog_age(human_years, multiplier = 7):
-                        return human_years * multiplier
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    def print_hello(name="Stranger"):
+                        print("Hello {}!".format(name))
                     </code></pre>
 
-                    <p>These two lines of code have the same result:</p>
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
-                    calculate_dog_age(3)
-                    calculate_dog_age(3, 7)
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    print_hello("Jessica")
                     </code></pre>
 
-                    <p>Default arguments can be overriden two ways:</p>
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
-                    calculate_dog_age(3, 6)
-                    calculate_dog_age(3, multiplier=6)
-                    </code></pre>
+                    <div class="fragment">
+                        <p>Default arguments can be overriden two ways:</p>
+                        <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
+                        print_hello("Jessica")
+                        print_hello(name="Jessica")
+                        </code></pre>
+                    </div>
                 </section>
 
-                <section>
-                    <h3>Multiple return values</h3>
-
-                    <p>A function can specify multiple return values, separated by commas.</p>
-
-                    <pre style="font-size:1.0em"><code data-trim data-noescape class="python">
-                    def divide_exact(n, d):
-                        quotient = n // d
-                        remainder = n % d
-                        return quotient, remainder
-                    </code></pre>
-
-                    <p>Any code that calls that function must also "unpack it" using commas:</p>
-
-                    <pre style="font-size:1.0em"><code data-trim data-noescape class="python">
-                    q, r = divide_exact(618, 10)
-                    </code></pre>
-                </section>
+                
 
 
                 <section class="heading-only">
@@ -272,16 +276,16 @@
                 <section>
                     <h3>Booleans</h3>
 
-                    <p>A <strong>Boolean value</strong> is either <code>True</code> or <code>False</code>
+                    <p class="fragment">A <strong>Boolean value</strong> is either <code>True</code> or <code>False</code>
                     and is used frequently in computer programs.</p>
 
-                    <p>Google Maps uses a boolean to decide whether to avoid highways in driving directions:</p>
-                    <pre style="font-size:1.0em"><code data-trim data-noescape class="python">
+                    <p class="fragment">Google Maps uses a boolean to decide whether to avoid highways in driving directions:</p>
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
                     avoid_highways = True
                     </code></pre>
 
-                    <p>Twitter uses a boolean to remember where the user allows personalized ads:</p>
-                    <pre style="font-size:1.0em"><code data-trim data-noescape class="python">
+                    <p class="fragment">Twitter uses a boolean to remember where the user allows personalized ads:</p>
+                    <pre class="fragment"style="font-size:.7em"><code data-trim data-noescape class="python">
                     personalized_ads = False
                     </code></pre>
                 </section>
@@ -289,17 +293,15 @@
                 <section>
                     <h3>Boolean expressions</h3>
 
-                    <p>An expression can evaluate to a Boolean.
+                    <p class="fragment">An expression can evaluate to a Boolean.
                         Most Boolean expressions use either comparison or logical operators.
                     </p>
-                    <br>
-                    <p>An expression with a comparison operator:</p>
-                    <pre style="font-size:1.0em"><code data-trim data-noescape class="python">
+                    <p class="fragment">An expression with a comparison operator:</p>
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
                     passed_class = grade > 65
                     </code></pre>
-                    <br>
-                    <p>An expression with a logical operator:</p>
-                    <pre style="font-size:1.0em"><code data-trim data-noescape class="python">
+                    <p class="fragment">An expression with a logical operator:</p>
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
                     wear_jacket = is_raining or is_windy
                     </code></pre>
 
@@ -308,7 +310,7 @@
                 <section>
                     <h3>Comparison operators</h3>
 
-                    <table>
+                    <table class="fragment">
                         <thead>
                             <tr><td>Operator  </td><td>Meaning </td><td>True expressions
                             </td></tr>
@@ -323,7 +325,7 @@
                         </tbody>
                     </table>
                     <br>
-                    <p class="smaller">⚠️ Common mistake: Do not confuse <code>=</code> (the assignment operator) with <code>==</code> (the equality operator).</p>
+                    <p class="fragment" class="smaller">⚠️ Common mistake: Do not confuse <code>=</code> (the assignment operator) with <code>==</code> (the equality operator).</p>
                 </section>
 
                 <section>
@@ -333,9 +335,9 @@
                         <thead>
                             <tr><th>Operator<th style="width:40%">True expressions <th>Meaning
                         <tbody>
-                            <tr><td><code>and</code> <td> <code>4 &gt; 0 and -2 &lt; 0</code> <td class="smaller">Evaluates to <code>True</code> if both cconditions are true; otherwise evaluates to <code>False</code>.
-                            <tr><td><code>or</code>  <td> <code>4 &gt; 0 or -2 &gt; 0 </code> <td class="smaller">Evaluates to <code>True</code> if either condition is true; evaluates to <code>False</code> only if both are false.
-                            <tr><td><code>not</code> <td> <code>not (5 == 0)</code> <td class="smaller">Evaluates to <code>True</code> if condition is false; evaluates to <code>False</code> if condition is true.
+                            <tr class="fragment"><td><code>and</code> <td> <code>4 &gt; 0 and -2 &lt; 0</code> <td class="smaller">Evaluates to <code>True</code> if both cconditions are true; otherwise evaluates to <code>False</code>.
+                            <tr class="fragment"><td><code>or</code>  <td> <code>4 &gt; 0 or -2 &gt; 0 </code> <td class="smaller">Evaluates to <code>True</code> if either condition is true; evaluates to <code>False</code> only if both are false.
+                            <tr class="fragment"><td><code>not</code> <td> <code>not (5 == 0)</code> <td class="smaller">Evaluates to <code>True</code> if condition is false; evaluates to <code>False</code> if condition is true.
                        </tbody>
                     </table>
                     <br>
@@ -357,12 +359,12 @@
                     <p>A function can use a Boolean expression to return a result based on the
                         values of the parameters.</p>
 
-                    <pre style="font-size:1.0em"><code data-trim data-noescape class="python">
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
                     def passed_class(grade):
                         return grade > 65
                     </code></pre>
 
-                    <pre style="font-size:1.0em"><code data-trim data-noescape class="python">
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
                     def should_wear_jacket(is_rainy, is_windy):
                         return is_rainy or is_windy
                     </code></pre>
@@ -390,48 +392,44 @@
                 <section>
                     <h3>Conditional statements</h3>
 
-                    <p>A <strong>conditional statement</strong> gives your code a way to execute
+                    <p class="fragment">A <strong>conditional statement</strong> gives your code a way to execute
                         a different suite of code statements based on whether certain
                         conditions are true or false.</p>
 
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
                     if &lt;condition&gt;:
                         &lt;statement&gt;
                         &lt;statement&gt;
-                        ...
                     </code></pre>
 
-                    <p>A simple conditional:</p>
+                    <p class="fragment">A simple conditional:</p>
 
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
                     clothing = "shirt"
 
                     if temperature < 32:
                         clothing = "jacket"
                     </code></pre>
 
-                    <p class="smaller">In what situations will <code>clothing</code> be assigned to "jacket"?</p>
+                    <p class="fragment" class="smaller">In what situations will <code>clothing</code> be assigned to "jacket"?</p>
                 </section>
 
                 <section>
                     <h3>Compound conditionals</h3>
 
-                    <p>A conditional can include any number of <code>elif</code>
+                    <p class="fragment">A conditional can include any number of <code>elif</code>
                         statements to check other conditions.</p>
 
-                    <pre style="font-size:0.6em"><code data-trim data-noescape class="python">
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
                     if &lt;condition&gt;:
                         &lt;statement&gt;
-                        ...
                     elif &lt;condition&gt;:
                         &lt;statement&gt;
-                        ...
                     elif &lt;condition&gt;:
                         &lt;statement&gt;
-                        ...
                     </code></pre>
 
-                    <pre style="font-size:0.6em"><code data-trim data-noescape class="python">
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
                     clothing = "shirt"
 
                     if temperature < 0:
@@ -483,19 +481,16 @@
                     <p>A conditional can include an <code>else</code>
                     to specify code to execute if no previous conditions are true.</p>
 
-                    <pre style="font-size:0.6em"><code data-trim data-noescape class="python">
+                    <pre class="fragment" style="font-size:0.6em"><code data-trim data-noescape class="python">
                     if &lt;condition&gt;:
                         &lt;statement&gt;
-                        ...
                     elif &lt;condition&gt;:
                         &lt;statement&gt;
-                        ...
                     else &lt;condition&gt;:
                         &lt;statement&gt;
-                        ...
                     </code></pre>
 
-                    <pre style="font-size:0.6em"><code data-trim data-noescape class="python">
+                    <pre class="fragment" style="font-size:0.6em"><code data-trim data-noescape class="python">
                     if temperature < 0:
                         clothing = "snowsuit"
                     elif temperature < 32:
@@ -509,7 +504,7 @@
                 <section>
                     <h3>Conditional statements summary</h3>
 
-                    <pre style="font-size:0.6em"><code data-trim data-noescape class="python">
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
                     if num < 0:
                         sign = "negative"
                     elif num > 0:
@@ -518,12 +513,14 @@
                         sign = "neutral"
                     </code></pre>
 
-                    <p>Syntax tips:</p>
-                    <ul>
-                        <li>Always start with <code>if</code> clause.
-                        <li>Zero or more <code>elif</code> clauses.
-                        <li>Zero or one <code>else</code> clause, always at the end.
-                    </ul>
+                    <div class="fragment">
+                        <p>Syntax tips:</p>
+                        <ul>
+                            <li>Always start with <code>if</code> clause.
+                            <li>Zero or more <code>elif</code> clauses.
+                            <li>Zero or one <code>else</code> clause, always at the end.
+                        </ul>
+                    </div>
                     <!-- TODO CS61A add execution rules -->
 
                 </section>
@@ -531,15 +528,14 @@
                 <section>
                     <h3>Conditionals in environment diagrams</h3>
 
-                    <p>How Python interprets a conditional:</p>
-                    <ul>
+                    <p class="fragment">How Python interprets a conditional:</p>
+                    <ul class="fragment">
                         <li>Evaluate the condition in the first clause.
                         <li>If it's true, execute the suite of statements underneath
                             and skip the remaining caluses.
                         <li>Otherwise, continue to the next clause and repeat.
                     </ul>
-                    <img src="images/pythontutor_conditionals.png" alt="Screenshot of a conditional statement in PythonTutor" height="250">
-                    <p class="python-tutor-link">
+                    <p class="fragment" class="python-tutor-link">
                         <a target="_blank" href="http://pythontutor.com/visualize.html#code=num%20%3D%205%0A%0Aif%20num%20%3C%200%3A%0A%20%20%20%20sign%20%3D%20%22negative%22%0Aelif%20num%20%3E%200%3A%0A%20%20%20%20sign%20%3D%20%22positive%22%0Aelse%3A%0A%20%20%20%20sign%20%3D%20%22neutral%22&cumulative=true&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">
                             View in PythonTutor</a>
                     </p>
@@ -548,10 +544,10 @@
                 <section>
                     <h3>Conditionals in functions</h3>
 
-                    <p>It's common for a conditional to be based on the value of
+                    <p class="fragment">It's common for a conditional to be based on the value of
                         the parameters to a function.</p>
 
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
                     def get_number_sign(num):
                         if num < 0:
                             sign = "negative"
@@ -562,7 +558,7 @@
                         return sign
                     </code></pre>
 
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
                     get_number_sign(50)  # "positive"
                     get_number_sign(-1)  # "negative"
                     get_number_sign(0)   # "neutral"
@@ -576,7 +572,7 @@
                         which exits the function entirely.
                     </p>
 
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
                     def get_number_sign(num):
                         if num < 0:
                             return "negative"
@@ -586,7 +582,7 @@
                             return "neutral"
                     </code></pre>
 
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
                     get_number_sign(50)  # "positive"
                     get_number_sign(-1)  # "negative"
                     get_number_sign(0)   # "neutral"
@@ -596,7 +592,7 @@
                 <section>
                     <h3>Exercise</h3>
 
-                    <p>We'll do the first one together, then you'll work on the others individually. DM on Zoom for help if you have a question or feel stuck.</p>
+                    <p>We'll do the first one together, then you'll work on the others individually. Message in chat for help if you have a question or feel stuck.</p>
 
                     <ul>
                         <li><a target="_blank" href="https://replit.com/team/gdi01/ConditionalsGreaterNum">greater_num</a>
@@ -605,6 +601,7 @@
                         <li><a target="_blank" href="https://replit.com/team/gdi01/ConditionalsGradeAssigner">assign_grade</a>
                         <li><a target="_blank" href="https://replit.com/team/gdi01/ConditionalsPluralizer">pluralizer</a>
                     </ul>
+                    <p>When your done you can hop off at the end of time.</p>
 
                 </section>
 
