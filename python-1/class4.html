@@ -29,7 +29,7 @@
 			<div class="slides">
 
 				<section class="heading-only" style="padding-top:5%">
-                    <h1>Loops</h1>
+                    <h1>Python 101 Class #4</h1>
 
 					<div class="no-print" style="text-align: left; margin-top: 100px; font-size: 70%;">
 						Tips for navigating the slides:
@@ -70,17 +70,19 @@
                 <section>
                     <h3>Concatenating strings with numbers</h3>
 
-                    <p>The following results in an error:</p>
-                    <pre style="font-size:0.8em; margin-bottom:48px;"><code data-trim data-noescape class="python">
-                    count = 3
-                    noun = 'cat'
-                    plural = 'I have ' + count + ' ' + noun + 's'
-                    </code></pre>
+                    <div class="fragment">
+                        <p>The following results in an error:</p>
+                        <pre style="font-size:0.7em; margin-bottom:48px;"><code data-trim data-noescape class="python">
+                        count = 3
+                        noun = 'cat'
+                        plural = 'I have ' + count + ' ' + noun + 's'
+                        </code></pre>
+                    </div>
 
-                    <p><strong>Strings can only be concatenated with other strings.</strong><br>
+                    <p class="fragment"><strong>Strings can only be concatenated with other strings.</strong><br>
                         You can convert other values using <code>str()</code>:</p>
 
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
                     plural = 'I have ' + str(count) + ' ' + noun + 's'
                     </code></pre>
                 </section>
@@ -106,19 +108,18 @@
                     <h3>Why loops?</h3>
 
                     <p>Consider the following code...</p>
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
                     print(9 * 1)
                     print(9 * 2)
                     print(9 * 3)
                     print(9 * 4)
                     print(9 * 5)
                     </code></pre>
-
-                    <p>This code is repetitive and variable, but the variability
-                        is sequential - it just adds one to the right-hand side number each time.
-                        In English, we could describe this as "print out the first 5 multiples of 9".</p>
-
-                    <p>We can simplify this code with a loop!</p>
+                    <ul>
+                        <li class="fragment">This code is repetitive and variable</li>
+                        <li class="fragment">In English, we could describe this as "print out the first 5 multiples of 9".</li>
+                        <li class="fragment">We can simplify this code with a loop</li>
+                    </ul>
                 </section>
 
                 <section>
@@ -126,22 +127,22 @@
 
                     <p>The while loop syntax:</p>
 
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
                     while &lt;condition&gt;:
                         &lt;statement&gt;
                         &lt;statement&gt;
                     </code></pre>
 
-                    <p>As long as the condition is true, the statements below it are executed.</p>
+                    <p class="fragment">As long as the condition is true, the statements below it are executed.</p>
 
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
                     multiplier = 1
                     while multiplier &lt;= 5:
                         print(9 * multiplier)
                         multiplier += 1
                     </code></pre>
 
-                    <p>The code is significantly shorter, and it can easily be extended
+                    <p class="fragment">The code is significantly shorter, and it can easily be extended
                         to loop for more or less iterations.</p>
 
                 </section>
@@ -151,7 +152,7 @@
 
                     <p>You can change the initial values of the variables used in the condition:</p>
 
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
                     multiplier = 3
                     while multiplier &lt;= 5:
                         print(9 * multiplier)
@@ -159,9 +160,9 @@
                     </code></pre>
 
                     <ul>
-                        <li>What will be the first thing displayed? <span class="fragment">27</span>
-                        <li>What will be the last thing displayed? <span class="fragment">45</span>
-                        <li>How many iterations? <span class="fragment">3 (for values of 3, 4, 5)<span>
+                        <li class="fragment">What will be the first thing displayed? <span class="fragment">27</span>
+                        <li class="fragment">What will be the last thing displayed? <span class="fragment">45</span>
+                        <li class="fragment">How many iterations? <span class="fragment">3 (for values of 3, 4, 5)<span>
                     </ul>
                 </section>
 
@@ -169,7 +170,7 @@
                     <h3>Changing a while loop #2</h3>
 
                     <p>You can change the condition:</p>
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
                     multiplier = 3
                     while multiplier &lt;= 10:
                         print(9 * multiplier)
@@ -177,9 +178,9 @@
                     </code></pre>
 
                     <ul>
-                        <li>What will be the first thing displayed? <span class="fragment">27</span>
-                        <li>What will be the last thing displayed? <span class="fragment">90</span>
-                        <li>How many iterations? <span class="fragment">8 (for values of 3, 4, 5, 6, 7, 8, 9, 10)<span>
+                        <li class="fragment">What will be the first thing displayed? <span class="fragment">27</span>
+                        <li class="fragment">What will be the last thing displayed? <span class="fragment">90</span>
+                        <li class="fragment">How many iterations? <span class="fragment">8 (for values of 3, 4, 5, 6, 7, 8, 9, 10)<span>
                     </ul>
                 </section>
 
@@ -187,7 +188,7 @@
                     <h3>Changing a while loop #3</h3>
 
                     <p>You can change how much the values change between iterations:</p>
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
                     multiplier = 3
                     while multiplier &lt;= 10:
                         print(9 * multiplier)
@@ -195,9 +196,9 @@
                     </code></pre>
 
                     <ul>
-                        <li>What will be the first thing displayed? <span class="fragment">27</span>
-                        <li>What will be the last thing displayed? <span class="fragment">81</span>
-                        <li>How many iterations? <span class="fragment">4 (for values of 3, 5, 7, 9)<span>
+                        <li class="fragment">What will be the first thing displayed? <span class="fragment">27</span>
+                        <li class="fragment">What will be the last thing displayed? <span class="fragment">81</span>
+                        <li class="fragment">How many iterations? <span class="fragment">4 (for values of 3, 5, 7, 9)<span>
                     </ul>
                 </section>
 
@@ -206,7 +207,7 @@
                     <h3>Changing a while loop #4</h3>
 
                     <p>You can change the computation inside the while loop:</p>
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
                     multiplier = 3
                     while multiplier &lt;= 10:
                         print(10 * multiplier)
@@ -226,7 +227,7 @@
                     <p>It's common to use a <strong>counter variable</strong>
                         whose job is keeping track of the number of iterations.</p>
 
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
                     total = 0
                     counter = 0
                     while counter < 5:
@@ -234,9 +235,9 @@
                       counter += 1
                     </code></pre>
 
-                    <p>The counter variable may also be involved in the loop computation:</p>
+                    <p class="fragment">The counter variable may also be involved in the loop computation:</p>
 
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
                     total = 0
                     counter = 0
                     while counter < 5:
@@ -249,7 +250,7 @@
                     <h3>Beware infinite loops</h3>
 
                     <p>Uh oh..</p>
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
                     counter = 1
                     while counter < 5:
                         total += pow(2, counter)
@@ -260,7 +261,7 @@
                     </p>
 
                     <div class="fragment">
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
                     counter = 6
                     while counter > 5:
                       total += pow(2, counter)
@@ -278,13 +279,13 @@
                     <h3>Loops in environment diagrams</h3>
 
                     <p>How Python interprets a while loop:</p>
-                    <ol>
+                    <ol class="fragment">
                         <li>Evaluate the header’s Boolean expression.
                         <li>If it is a true value, execute the suite of statements,
                             then return to step 1.
                     </ol>
-                    <img src="images/pythontutor_loops.png" alt="Screenshot of a loop in PythonTutor" height="250">
-                    <p class="python-tutor-link">
+                    <img class="fragment" src="images/pythontutor_loops.png" alt="Screenshot of a loop in PythonTutor" height="200">
+                    <p class="fragment" class="python-tutor-link">
                         <a target="_blank" href="http://pythontutor.com/visualize.html#code=sum%20%3D%200%0Acounter%20%3D%200%0Awhile%20counter%20%3C%2010%3A%0A%20%20%20%20sum%20%2B%3D%20pow%28counter,%202%29%0A%20%20%20%20counter%20%2B%3D%201%0A&cumulative=true&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">
                             View in PythonTutor</a>
                     </p>
@@ -295,7 +296,7 @@
 
                     <p>A loop in a function will commonly use a parameter to determine some aspect of its repetition.</p>
 
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
                     def sum_up_squares(start, end):
                         counter = start
                         total = 0
@@ -326,7 +327,7 @@
 
                     <p>To prematurely exit a loop, use the <code>break</code> statement:</p>
 
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
                     counter = 100
                     while counter < 200:
                         if counter % 7 == 0:
@@ -335,17 +336,17 @@
                         counter += 1
                     </code></pre>
 
-                    <p class="python-tutor-link">
+                    <p class="fragment" class="python-tutor-link">
                         <a target="_blank" href="http://pythontutor.com/visualize.html#code=counter%20%3D%20100%0Awhile%20counter%20%3C%20200%3A%0A%20%20%20%20if%20counter%20%25%207%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20first_multiple%20%3D%20counter%0A%20%20%20%20%20%20%20%20break%0A%20%20%20%20counter%20%2B%3D%201&cumulative=true&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">View in PythonTutor</a>
                     </p>
                 </section>
 
                 <section>
-                    <h3>Looping while true</h3>
+                    <h3>While True Loop</h3>
 
                     <p>If you are brave, you can write while loops like this:</p>
 
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
                     counter = 100
                     while True:
                         if counter % 62 == 0:
@@ -368,44 +369,47 @@
 
                     <p>The for loop syntax:</p>
 
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
                     for &lt;value&gt; in &lt;sequence&gt;:
                         &lt;statement&gt;
                         &lt;statement&gt;
                     </code></pre>
 
-                    <p>The for loop provides a cleaner way to write many while loops,
-                        as long as they are iterating over some sort of sequence.
-                    </p>
+                    <p class="fragment">For Loops is for iterating over some sort of sequence.</p>
 
-                    <p>A for loop iterating over a sequence of numbers:</p>
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
-                    for num in range(1, 5):
-                        print(9 * num)
-                    </code></pre>
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                        for num in range(1, 5):
+                            print(9 * num)
+                        </code></pre>
                 </section>
 
                 <section>
-                    <h3>range() options</h3>
-                    <p class="smaller">If just one argument, range starts at 0 and ends just before it:</p>
-                    <pre style="font-size:0.8em; margin-bottom:48px;"><code data-trim data-noescape class="python">
-                    for num in range(6):
-                        print(num)       # 0, 1, 2, 3, 4, 5
-                    </code></pre>
-                    <p class="smaller">If two arguments, range starts at first and ends just before second:</p>
-                    <pre style="font-size:0.8em; margin-bottom:48px;"><code data-trim data-noescape class="python">
-                    for num in range(1, 6):
-                        print(num)       # 1, 2, 3, 4, 5
-                    </code></pre>
-                    <p class="smaller">If three arguments, the range steps at that rate:</p>
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
-                    for num in range(1, 6, 2):
-                        print(num)       # 1, 3, 5
-                    </code></pre>
+                    <h3>range()</h3>
+                    <div class="fragment">
+                        <p class="smaller">If just one argument, range starts at 0 and ends just before it:</p>
+                        <pre style="font-size:0.7em; margin-bottom:48px;"><code data-trim data-noescape class="python">
+                        for num in range(6):
+                            print(num)       # 0, 1, 2, 3, 4, 5
+                        </code></pre>
+                    </div>
+                    <div class="fragment">
+                        <p class="smaller">If two arguments, range starts at first and ends just before second:</p>
+                        <pre style="font-size:0.7em; margin-bottom:48px;"><code data-trim data-noescape class="python">
+                        for num in range(1, 6):
+                            print(num)       # 1, 2, 3, 4, 5
+                        </code></pre>
+                    </div>
+                    <div class="fragment">
+                        <p class="smaller">If three arguments, the range steps at that rate:</p>
+                        <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
+                        for num in range(1, 6, 2):
+                            print(num)       # 1, 3, 5
+                        </code></pre>
+                    </div>
                 </section>
 
                 <section>
-                    <h3>Exercise: For in range</h3>
+                    <h3>Exercise: For Loop & range()</h3>
 
                     <p>We'll work on the first part of this together.</p>
 
@@ -416,7 +420,11 @@
                 <section>
                     <h3>Coming soon...</h3>
 
+<<<<<<< HEAD
                     <p>...to a Zoom class NEAR YOU!!</p>
+=======
+                    <p>...to a virtual class NEAR YOU!!</p>
+>>>>>>> origin/main
 
                     <p>Next class will include another super common way to use <code>for</code> loops!</p>
                 </section>
@@ -444,7 +452,7 @@
                 <section>
                     <h3>Random example</h3>
 
-                    <pre style="font-size:0.8em"><code data-trim data-noescape class="python">
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
                     def random_rgb():
                         r = random.randint(0, 255)
                         g = random.randint(0, 255)
@@ -454,21 +462,21 @@
                     r1,g1,b1 = random_rgb()
                     </code></pre>
 
-                    <p><a href="https://replit.com/@pamelafox/RandomColor#main.py" target="_blank">PyGame: Random squares!</a></p>
+                    <p><a href="https://replit.com/@jessica_earley/RandomColor#main.py" target="_blank">PyGame: Random squares!</a></p>
 
                 </section>
 
                 <section>
                     <h3>Can computers be truly random?</h3>
 
-                    <p><strong>No</strong>. Computers use pseudo-random number generators,
+                    <p class="fragment"><strong>No</strong>. Computers use pseudo-random number generators,
                         which are considered good enough for most purposes.</p>
 
-                    <p>For true randomness (if it exists), you have to find
+                    <p class="fragment">For true randomness (if it exists), you have to find
                         random phenomena in the world, like atmospheric noise. <br>
                         See <a href="https://www.random.org/faq/" target="_blank">random.org</a></p>
                     <br>
-                    <p>🤔  Is anything truly random? Do humans have free will?</p>
+                    <p class="fragment">🤔  Is anything truly random? Do humans have free will?</p>
                 </section>
 
                 <section>
