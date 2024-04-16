@@ -535,6 +535,162 @@
                 </section>
 
                 <section>
+                    <h3>Multiple return values</h3>
+
+                    <p class="fragment">A function can specify multiple return values, separated by commas.</p>
+
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    def divide_exact(n, d):
+                        quotient = n // d
+                        remainder = n % d
+                        return quotient, remainder
+                    </code></pre>
+
+                    <p class="fragment">Any code that calls that function must also "unpack it" using commas:</p>
+
+                    <pre class="fragment" style="font-size:.7em"><code data-trim data-noescape class="python">
+                    q, r = divide_exact(618, 10)
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Default arguments</h3>
+
+                    <p class="fragment">Can have a default value for an arguement ins't passed in.</p>
+
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    def print_hello(name="Stranger"):
+                        print("Hello {}!".format(name))
+                    </code></pre>
+
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    print_hello("Jessica")
+                    </code></pre>
+
+                    <div class="fragment">
+                        <p>Default arguments can be overriden two ways:</p>
+                        <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
+                        print_hello("Jessica")
+                        print_hello(name="Jessica")
+                        </code></pre>
+                    </div>
+                </section>
+
+                <section class="heading-only">
+                    <h2>Boolean expressions</h2>
+                </section>
+
+                <section>
+                    <h3>Booleans</h3>
+
+                    <p class="fragment">A <strong>Boolean value</strong> is either <code>True</code> or <code>False</code>
+                    and is used frequently in computer programs.</p>
+
+                    <p class="fragment">Google Maps uses a boolean to decide whether to avoid highways in driving directions:</p>
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    avoid_highways = True
+                    </code></pre>
+
+                    <p class="fragment">Twitter uses a boolean to remember where the user allows personalized ads:</p>
+                    <pre class="fragment"style="font-size:.7em"><code data-trim data-noescape class="python">
+                    personalized_ads = False
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Boolean expressions</h3>
+
+                    <p class="fragment">An expression can evaluate to a Boolean.
+                        Most Boolean expressions use either comparison or logical operators.
+                    </p>
+                    <p class="fragment">An expression with a comparison operator:</p>
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    passed_class = grade > 65
+                    </code></pre>
+                    <p class="fragment">An expression with a logical operator:</p>
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    wear_jacket = is_raining or is_windy
+                    </code></pre>
+
+                </section>
+
+                <section>
+                    <h3>Comparison operators</h3>
+
+                    <table class="fragment">
+                        <thead>
+                            <tr><td>Operator  </td><td>Meaning </td><td>True expressions
+                            </td></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>==    </td><td>Equality </td><td><code>32 == 32</code>
+                            <tr><td>!=     </td><td>Inequality </td><td><code>30 != 32</code>
+                            <tr><td>&gt;  </td><td>Greater than </td><td> <code>60 &gt;= 32	</code>
+                            <tr><td>&gt;=</td><td>Greater than or equal </td><td><code>60 &gt;= 32	</code>, <code>32 &gt;= 32</code>
+                            </tr><tr><td>&lt;   </td><td>Less than </td><td><code>20 &lt; 32</code>
+                            </tr><tr><td>&lt;= </td><td>Less than or equal </td><td><code>20 &lt; 32</code>, <code>32 &lt;= 32</code>
+                        </tbody>
+                    </table>
+                    <br>
+                    <p class="fragment" class="smaller">⚠️ Common mistake: Do not confuse <code>=</code> (the assignment operator) with <code>==</code> (the equality operator).</p>
+                </section>
+
+                <section>
+                    <h3>Logical operators</h3>
+
+                    <table>
+                        <thead>
+                            <tr><th>Operator<th style="width:40%">True expressions <th>Meaning
+                        <tbody>
+                            <tr class="fragment"><td><code>and</code> <td> <code>4 &gt; 0 and -2 &lt; 0</code> <td class="smaller">Evaluates to <code>True</code> if both cconditions are true; otherwise evaluates to <code>False</code>.
+                            <tr class="fragment"><td><code>or</code>  <td> <code>4 &gt; 0 or -2 &gt; 0 </code> <td class="smaller">Evaluates to <code>True</code> if either condition is true; evaluates to <code>False</code> only if both are false.
+                            <tr class="fragment"><td><code>not</code> <td> <code>not (5 == 0)</code> <td class="smaller">Evaluates to <code>True</code> if condition is false; evaluates to <code>False</code> if condition is true.
+                       </tbody>
+                    </table>
+                    <br>
+                </section>
+
+                <section>
+                    <h3>Compound booleans</h3>
+
+                    <p>When combining multiple operators in a single expression, use parentheses to group:</p>
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    may_have_mobility_issues = (age &gt;= 0 and age &lt; 2)  or age &gt; 90
+                    </code></pre>
+
+                </section>
+
+                <section>
+                    <h3>Boolean expressions in functions</h3>
+
+                    <p>A function can use a Boolean expression to return a result based on the
+                        values of the parameters.</p>
+
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    def passed_class(grade):
+                        return grade > 65
+                    </code></pre>
+
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    def should_wear_jacket(is_rainy, is_windy):
+                        return is_rainy or is_windy
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Exercise</h3>
+
+                    <p>We'll do the first together. Then work on the others individually and ask for help if you have any questions or feel stuck.</p>
+                    <ul>
+                        <li><a href="https://replit.com/@AbigailSimanjun/Curly-hair-boolean-exercise#main.py" target="_blank">has_curly_hair()</a>
+                        <li><a href="https://replit.com/@AbigailSimanjun/Free-lobe-boolean-exercise#main.py" target="_blank">has_free_lobe()</a>
+                        <li><a href="https://replit.com/@AbigailSimanjun/Can-be-president-boolean-exercise#main.py" target="_blank">can_be_president()</a>
+                        <li><a href="https://replit.com/@AbigailSimanjun/Safe-to-eat-boolean-exercise#main.py" target="_blank">is_safe_to_eat()</a>
+                        <li><a href="https://replit.com/@AbigailSimanjun/Harvest-time-boolean-exercise#main.py" target="_blank">harvest_time()</a>
+                    </ul>
+                </section>
+
+                <section>
                     <h3>Summary</h3>
 
                     <ul class="smaller">
