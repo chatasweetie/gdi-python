@@ -1,0 +1,671 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="description" content="Girl Develop It Python 1 Course. Presentation theme forked from Hakim El Hattab's reveal.js">
+		<meta name="author" content="Girl Develop It">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<!-- Update with GDI Course Name -->
+		<title>Python 1: Loops</title>
+
+		<link rel="icon" type="image/x-icon" href="../assets/imgs/favicon.ico" />
+
+		<!-- RevealJS CDN -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reset.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/theme/simple.css" id="theme">
+
+		<!-- GDI Custom Theme -->
+		<link rel="stylesheet" href="../assets/css/gdi-theme.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/styles/monokai.min.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section class="heading-only" style="padding-top:5%">
+                    <h1>Python 101 Class #4</h1>
+
+					<div class="no-print" style="text-align: left; margin-top: 100px; font-size: 70%;">
+						Tips for navigating the slides:
+						<ul>
+							<li>Press O or Escape for overview mode.</li>
+							<li>Visit <a href="?print-pdf" target="_blank">this link</a> for a nice printable version</li>
+							<li>Press the copy icon on the upper right of code blocks to copy the code</li>
+						</ul>
+                    </div>
+
+                    <aside class="speaker-notes">
+                    Lesson Plan:
+                    12:05 - String conversion
+                    12:10 - Exercise
+                    12:20 - While loops
+                    12:40 - Exercise
+                     1:10 - For loops
+                     1:20 - Exercise
+                     1:40 - Randomness
+                    </aside>
+				</section>
+
+                <section>
+                    <h3>Class outline:</h3>
+
+                    <ul>
+                        <li>Review</li>
+                        <li>String conversion</li>
+                        <li>For loops
+                        <li>Lists
+                    </ul>
+                </section>
+
+                <section class="heading-only">
+                    <h2>Review</h2>
+                </section>
+
+                <section>
+                    <h3>While loops</h3>
+
+                    <p>The while loop syntax:</p>
+
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    while &lt;condition&gt;:
+                        &lt;statement&gt;
+                        &lt;statement&gt;
+                    </code></pre>
+
+                    <p class="fragment">As long as the condition is true, the statements below it are executed.</p>
+
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    multiplier = 1
+                    while multiplier &lt;= 5:
+                        print(9 * multiplier)
+                        multiplier += 1
+                    </code></pre>
+
+                </section>
+
+                <section>
+                    <h3>Infinite loops</h3>
+
+                    <p>Uh oh..</p>
+                    <p>Make sure that your While loops condition has a way to become false</p>
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    counter = 1
+                    while counter < 5:
+                        total += pow(2, counter)
+                    </code></pre>
+
+                </section>
+
+                <section>
+                    <h3>The break statement</h3>
+
+                    <p>To prematurely exit a loop, use the <code>break</code> statement:</p>
+
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    counter = 100
+                    while counter < 200:
+                        if counter % 7 == 0:
+                            first_multiple = counter
+                            break
+                        counter += 1
+                    </code></pre>
+
+                </section>
+
+                <section>
+                    <h3>While True Loop</h3>
+
+                    <p>This is a useful loop, just make sure you have a break, usually under an <code>if statement</code></p>
+
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    counter = 100
+                    while True:
+                        if counter % 62 == 0:
+                            first_multiple = counter
+                            break
+                        counter += 1
+                    </code></pre>
+
+                    <p>⚠️ Be very sure that you're not coding an infinite loop!</p>
+
+                </section>
+
+
+
+                <section class="heading-only">
+                    <h2>String conversion</h2>
+                </section>
+
+                <section>
+                    <h3>Concatenating strings with numbers</h3>
+
+                    <div class="fragment">
+                        <p>The following results in an error:</p>
+                        <pre style="font-size:0.7em; margin-bottom:48px;"><code data-trim data-noescape class="python">
+                        count = 3
+                        noun = 'cat'
+                        plural = 'I have ' + count + ' ' + noun + 's'
+                        </code></pre>
+                    </div>
+
+                    <p class="fragment"><strong>Strings can only be concatenated with other strings.</strong><br>
+                        You can convert other values using <code>str()</code>:</p>
+
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    plural = 'I have ' + str(count) + ' ' + noun + 's'
+                    </code></pre>
+
+                    <p>This is called type casting</p>
+                </section>
+
+                <section>
+                    <h3>Exercise: String conversion</h3>
+
+                    <p>We'll do the first one together, and you'll do the other two individually.</p>
+
+                    <ul>
+                        <li><a href="https://replit.com/@AbigailSimanjun/Solar-system-conversion#main.py" target="_blank">solar_system()</a>
+                        <li><a href="https://replit.com/@AbigailSimanjun/Menu-conversion#main.py" target="_blank">menu()</a>
+                        <li><a href="https://replit.com/@AbigailSimanjun/Count-evens-exercise#main.py" target="_blank">location()</a>
+                        <li><a href="https://replit.com/@AbigailSimanjun/Fancy-date-conversion#main.py" target="_blank">fancy_date()</a>
+                    </ul>
+                </section>
+
+                
+                <section class="heading-only">
+                    <h2>For loops</h2>
+                </section>
+
+                <section>
+                    <h3>For loop</h3>
+
+                    <p>The for loop syntax:</p>
+
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    for &lt;variable_name&gt; in &lt;sequence&gt;:
+                        &lt;statement&gt;
+                        &lt;statement&gt;
+                    </code></pre>
+
+                    <p class="fragment">For Loops is for iterating over some sort of sequence.</p>
+
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                        for num in range(1, 5):
+                            print(9 * num)
+                        </code></pre>
+                </section>
+
+                <section>
+                    <h3>range()</h3>
+                    <div class="fragment">
+                        <p class="smaller">If just one argument, range starts at 0 and ends just before it:</p>
+                        <pre style="font-size:0.7em; margin-bottom:48px;"><code data-trim data-noescape class="python">
+                        for num in range(6):
+                            print(num)       # 0, 1, 2, 3, 4, 5
+                        </code></pre>
+                    </div>
+                    <div class="fragment">
+                        <p class="smaller">If two arguments, range starts at first and ends just before second:</p>
+                        <pre style="font-size:0.7em; margin-bottom:48px;"><code data-trim data-noescape class="python">
+                        for num in range(1, 6):
+                            print(num)       # 1, 2, 3, 4, 5
+                        </code></pre>
+                    </div>
+                    <div class="fragment">
+                        <p class="smaller">If three arguments, the range steps at that rate:</p>
+                        <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
+                        for num in range(1, 6, 2):
+                            print(num)       # 1, 3, 5
+                        </code></pre>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Exercise: For Loop & range()</h3>
+
+                    <p>We'll work on the first part of this together.</p>
+
+                    <a href="https://replit.com/@AbigailSimanjun/Range-exercise#main.py" targeet="_blank">Range fixer</a></p>
+
+                </section>
+
+                
+                <section class="heading-only">
+                    <h2>Lists</h2>
+                </section>
+
+                <section>
+                    <h3>Lists</h3>
+
+                    <p class="fragment">A list is a container that holds a sequence of related pieces of information.</p>
+                    <p class="fragment"> The shortest list is an empty list, just 2 square brackets: </p>
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    members = []
+                    </code></pre>
+                    <div class="fragment">
+                        <p>Lists can hold any Python values, separated by commas:</p>
+                        <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
+                        members = ["Pamela", "Tinu", "Brenda", "Kaya"]
+
+                        ages_of_kids = [1, 2, 7]
+
+                        prices = [79.99, 49.99, 89.99]
+
+                        remixed = ["Pamela", 7, 79.99]
+                        </code></pre>
+                    </div>
+
+                </section>
+
+
+                <section>
+                    <h3>List Index</h3>
+
+                    <p class="fragment">Each list item has an index, starting from 0.</p>
+
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    members = ["Pamela", "Tinu", "Brenda", "Kaya"]
+                    # Index:      0         1        2       3  
+                    </code></pre>
+
+                    
+                </section>
+
+                <section>
+                    <h3>Accessing items (Bracket notation)</h3>
+
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    members = ["Pamela", "Tinu", "Brenda", "Kaya"]
+                    # Index:      0         1        2       3  
+                    </code></pre>
+
+                    <p>Access each item by putting the index in brackets:</p>
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
+                        members[0]  <span class="fragment" data-fragment-index="4"># Pamela</span>
+                        members[1]  <span class="fragment" data-fragment-index="5"># Tinu</span>
+                        members[2]  <span class="fragment" data-fragment-index="6"># Brenda</span>
+                        members[3]  <span class="fragment" data-fragment-index="7"># Kaya</span>
+                        members[4]  <span class="fragment" data-fragment-index="8"># 🚫 Error!</span>
+                    </code></pre>
+                    
+
+                    <p class="fragment" data-fragment-index="9">Negative indices are also possible:</p>
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
+                        members[-1]  <span class="fragment" data-fragment-index="10"># Kaya</span>
+                        members[-2]  <span class="fragment" data-fragment-index="11"># Brenda</span>
+                        members[-6]  <span class="fragment" data-fragment-index="12"># 🚫 Error!</span>
+                    </code></pre>
+
+                    <aside class="notes">
+                        Show as an in-class example?
+                        Getting items from the inventory list
+                        Item = inventory[1]
+                    </aside>
+                </section>
+
+                <section>
+                    <h3>List length</h3>
+
+                    <p class="fragment">Use the global <code>len()</code> function
+                        to find the length of a list.</p>
+
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    attendees = ["Tammy", "Shonda", "Tina"]
+
+                    print(len(attendees))   <span class="fragment">#  3</span>
+
+                    num_of_attendees = len(attendees)
+                    print(num_of_attendees)
+                    </code></pre>
+
+                </section>
+
+                <section>
+                    <h3>Exercise: Making lists</h3>
+
+                    <p>We'll work on the first part together, and then you'll work on the rest individually.</p>
+
+                    <ul>
+                        <li><a href="https://replit.com/@AbigailSimanjun/List-maker#main.py" target="_blank">List maker</a>
+                        <li><a href="https://replit.com/@AbigailSimanjun/Point-maker#main.py" target="_blank">Point maker</a>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Modifying list items</h3>
+
+                    <p class="fragment">Python lists are <strong>mutable</strong>, which means
+                        you can change the values stored in them.</p>
+                    <p class="fragment">Use bracket notation to modify single items in the list:</p>
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                        members = ["Pamela", "Tinu", "Brenda", "Kaya"]
+                        members[2] = "Jessica"
+                        members[-1] = "Abby"
+                    </code></pre>
+
+                    <p class="fragment" class="python-tutor-link">
+                        <a target="_blank" href="https://pythontutor.com/render.html#code=members%20%3D%20%5B%22Pamela%22,%20%22Tinu%22,%20%22Brenda%22,%20%22Kaya%22%5D%0A%0Amembers%5B2%5D%20%3D%20%22Jessica%22%0A%0Amembers%5B-1%5D%20%3D%20%22Abby%22&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">Try in PythonTutor</a>
+                    </p>
+                    <div class="fragment">
+                    <p class="smaller">What if we change the value of an item beyond the list length?</p>
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
+                        members[5] = "Denise" <span class="fragment"># 🚫 Error!</span>
+                    </code></pre>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Modifying lists with methods</h3>
+                    <p>Don't worry, you don't have to memorize all of theses</p>
+
+                    <table style="font-size:0.65em;">
+                        <thead>
+                            <tr>
+                                <th>Method
+                                <th>Description
+                        <tbody>
+                            <tr>
+                                <td><code>.append(item)</code>
+                                <td>Adds <code>item</code> to the end of the list.
+                            <tr>
+                                <td><code>.insert(index, item)</code>
+                                <td>Inserts <code>item</code> at the specified <code>index</code>. This shifts all items after the specified index forward by one index.</p>
+                            <tr>
+                                <td><code>.remove(item)</code>
+                                <td>Remove the first item from the list whose value is equal to <code>item</code>.
+                                    It raises a <code>ValueError</code> if there is no such item.
+                            <tr>
+                                <td><code>.index(item)</code>
+                                <td>Returns the index of the first occurrence of an item whose value is equal to <code>item</code>.
+                            <tr>
+                                <td><code>.pop([index])</code>
+                                <td>If no <code>index</code> is specified, it removes the last item from the list and returns it.
+                                    Otherwise, it removes the item at the specified <code>index</code> and returns it.
+                    </table>
+
+                    <p class="smaller">See more in <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html">Python.org documentation</a></p>
+
+                </section>
+
+                <section>
+                    <h3>Examples of list modifying methods</h3>
+
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    groceries = ["apples", "bananas"]
+
+                    <span class="fragment">groceries.append("peanut butter")</span>
+                    <span class="fragment">groceries.insert(0, "applesauce")</span>
+                    <span class="fragment">groceries.insert(3, "cheerios")</span>
+                    <span class="fragment">groceries.remove("bananas")</span>
+
+                    <span class="fragment">bought_food = groceries.pop()</span>
+                    <span class="fragment">bought_food2 = groceries.pop(1)</span>
+                    <span class="fragment">i = groceries.index("cheerios")</span>
+                    <span class="fragment">bought_food3 = groceries.pop(i)</span>
+                    </code></pre>
+
+                    <p class="python-tutor-link"><a target="_blank" href="http://pythontutor.com/visualize.html#code=groceries%20%3D%20%5B%22apples%22,%20%22bananas%22%5D%0A%0Agroceries.append%28%22peanut%20butter%22%29%0Agroceries.insert%280,%20%22applesauce%22%29%0Agroceries.insert%283,%20%22cheerios%22%29%0A%0Agroceries.remove%28%22bananas%22%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">See in PythonTutor</a></p>
+                </section>
+
+                <section>
+                    <h3>Exercise: Mutating lists</h3>
+
+                    <p>We'll work on the first part together, and then you'll work on the rest individually.</p>
+
+                    <ul>
+                        <li><a href="https://replit.com/@AbigailSimanjun/List-mutator#main.py" target="_blank">List mutator</a>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Checking if value is in a list</h3>
+
+                    <div class="fragment">
+                        <p>The <code>in</code> keyword checks if
+                        a value is in a list (or any sequence).</p>
+                        <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
+                            if &lt;item&gt; in list:
+                                &lt;statement&gt;
+                        </code></pre>
+                    </div>
+
+                    <pre  class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    if "bananas" in groceries:
+                        print("⚠️ Watch your step!")
+
+                    if "bleach" in groceries:
+                        print("☣️ Watch what you eat!")
+                    </code></pre>
+
+                    <p class="fragment">When used inside if conditions, <code>in</code> expressions return a Boolean (<code>True</code>/<code>False</code>).</p>
+                </section>
+
+                <section>
+                    <h3>Looping through a list v1</h3>
+
+                    <p class="fragment">You can use a standard <code>while</code> loop:</p>
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                        members = ["Pamela", "Tinu", "Brenda", "Kaya"]
+                        i = 0
+                        while i < len(members):
+                            print(members[i])
+                            i += 1
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Looping through a list v2</h3>
+
+                    <div class="fragment">
+                    <p>😍 Python allows provides a <code>for-in</code> loop for lists: </p>
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
+                        members = ["Pamela", "Tinu", "Brenda", "Kaya"]
+                        for member in members:
+                            print(member)
+                    </code></pre>
+                    </div>
+
+                </section>
+                <section>
+                    <h3>Looping through a list</h3>
+
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                        members = ["Pamela", "Tinu", "Brenda", "Kaya"]
+                        i = 0
+                        while i < len(members):
+                            print(members[i])
+                            i += 1
+                    </code></pre>
+
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                        members = ["Pamela", "Tinu", "Brenda", "Kaya"]
+                        for member in members:
+                            print(member)
+                    </code></pre>
+                </section>
+
+                
+
+                <section>
+                    <h3>Exercise</h3>
+
+                    <ul>
+                        <li><a href="https://replit.com/@AbigailSimanjun/Average-scores#main.py" target="_blank">average_scores</a></li>
+                        <li><a href="https://replit.com/@AbigailSimanjun/Concatenator#main.py" target="_blank">concatenator</a></li>
+                    </ul>
+                </section>
+
+                <section class="heading-only">
+                    <h2>Nested Lists</h2>
+                </section>
+
+                <section>
+                    <h3>Nested Lists</h3>
+
+                    <p class="fragment">Since Python lists can contain any values, an item can itself be a list.</p>
+
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                        gymnasts = [
+                            ["Brittany", 9.15, 9.4, 9.3, 9.2],
+                            ["Lea", 9, 8.8, 9.1, 9.5],
+                            ["Maya", 9.2, 8.7, 9.2, 8.8]
+                        ]
+                    </code></pre>
+
+                    <ul>
+                     <li class="fragment">What's the length of <code>gymnasts</code>? <span class="fragment">3</span>
+                     <li class="fragment">What's the length of <code>gymnasts[0]</code>? <span class="fragment">5</span>
+                    </ul>
+
+                    <aside class="notes">
+                        Can also think of it in terms of rows and columns.
+                    </aside>
+                </section>
+
+                <section>
+                    <h4>Dynamic creation of nested lists</h4>
+
+                    <div class="fragment">
+                        <p>If we start with...</p>
+                        <pre style="font-size:0.6em"><code data-trim data-noescape class="python">
+                            gymnasts = [
+                                ["Brittany", 9.15, 9.4, 9.3, 9.2],
+                                ["Lea", 9, 8.8, 9.1, 9.5]
+                            ]
+                        </code></pre>
+                    </div>
+
+                    <p class="fragment">We can append another list a few ways:</p>
+                    <pre class="fragment" style="font-size:0.6em"><code data-trim data-noescape class="python">
+                    gymnasts.append(["Maya", 9.2, 8.7, 9.2, 8.8])
+                    </code></pre>
+                    <pre class="fragment" style="font-size:0.6em"><code data-trim data-noescape class="python">
+                    gymnasts += ["Maya", 9.2, 8.7, 9.2, 8.8]
+                    </code></pre>
+                    <pre class="fragment" style="font-size:0.6em"><code data-trim data-noescape class="python">
+                        gymnast = []
+                        gymnast.append("Maya")
+                        gymnast.append(9.2)
+                        gymnast.append(8.7)
+                        gymnast.append(9.2)
+                        gymnast.append(8.8)
+                        gymnasts.append(gymnast)
+                    </code></pre>
+
+                </section>
+
+                <section>
+                    <h3>Accessing nested list items</h3>
+
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
+                        gymnasts = [
+                            ["Brittany", 9.15, 9.4, 9.3, 9.2],
+                            ["Lea", 9, 8.8, 9.1, 9.5],
+                            ["Maya", 9.2, 8.7, 9.2, 8.8]
+                        ]
+                    </code></pre>
+
+                    <p class="fragment">Access using bracket notation, with more brackets as needed:</p>
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    gymnasts[0]    <span class="fragment"># ["Brittany", 9.15, 9.4, 9.3, 9.2]</span>
+                    gymnasts[0][0] <span class="fragment"># "Brittany"</span>
+                    gymnasts[1][0] <span class="fragment"># "Lea"</span>
+                    gymnasts[1][4] <span class="fragment"># 9.5</span>
+                    gymnasts[1][5] <span class="fragment"># 🚫 IndexError!</span>
+                    gymnasts[3][0] <span class="fragment"># 🚫 IndexError!</span>
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Modifying nested lists</h3>
+
+                    <pre style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    gymnasts = [
+                        ["Brittany", 9.15, 9.4, 9.3, 9.2],
+                        ["Lea", 9, 8.8, 9.1, 9.5],
+                        ["Maya", 9.2, 8.7, 9.2, 8.8]
+                    ]
+                    </code></pre>
+
+                    <p class="fragment">Modify using bracket notation as well, just like before:</p>
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                        gymnasts[0] = ["Olivia", 8.75, 9.1, 9.6, 9.8]</span>
+                        gymnasts[1][0] = "Leah"
+                        gymnasts[2][4] = 9.8
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Looping through nested lists</h3>
+
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    gymnasts = [
+                        ["Brittany", 9.15, 9.4, 9.3, 9.2],
+                        ["Lea", 9, 8.8, 9.1, 9.5],
+                        ["Maya", 9.2, 8.7, 9.2, 8.8]
+                    ]
+                    </code></pre>
+
+                    <p class="fragment">Use a nested <code>for-in</code> loop:</p>
+                    <pre class="fragment" style="font-size:0.7em"><code data-trim data-noescape class="python">
+                    for gymnast in gymnasts:
+                        for data in gymnast:
+                            print(data, end="|")
+                    </code></pre>
+
+                    <p class="fragment">Remember what type of data is being stored in the loop variable</p>
+                </section>
+
+
+
+			</div>
+            <footer>
+				<!-- Update with Course Name -->
+				<div class="copyright">
+					<img src="../assets/imgs/gdi-logos/gdi-logo_peach.png" alt="GDI Logo" width="40px" class="noborder"/>
+					<p>Python 1</p>
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png"/></a>
+				</div>
+			</footer>
+		</div> <!-- End of Reveal wrapper -->
+		
+		<!-- REVEAL.JS Script Files - Do Not Edit -->
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/plugin/highlight/highlight.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/highlightjs-badge@0.1.9/highlightjs-badge.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.5/js/jsplumb.min.js"></script>
+		<script>
+			const srcUrlPrefix = "https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/";
+			Reveal.initialize({
+				hash: true,
+				center: true,
+				slideNumber: true,
+				showNotes: false,
+				margin: 0.1,
+				preloadIframes: true,
+				plugins: [ RevealHighlight ],
+				pdfSeparateFragments: true
+			});
+
+      // add HighlightJS-badge (options are optional)
+			var options = {
+					copyIconContent: "📄",
+					checkIconContent: "✅"
+			};
+			window.highlightJsBadge(options);
+
+			if (window.location.search == "?print-pdf") {
+					var uncounted = document.querySelectorAll("[data-visibility='uncounted']");
+					uncounted.forEach(node => {
+							node.parentNode.classList.add("no-print")
+					})
+			}
+		</script>
+	</body>
+</html>
